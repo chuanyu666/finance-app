@@ -1,0 +1,9 @@
+rootProject.name = 'finance-app'
+include 'util'
+include 'api'
+include 'entity'
+include 'manager'
+include 'quartz'
+include 'seller'
+include 'swagger'
+

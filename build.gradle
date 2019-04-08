@@ -1,0 +1,22 @@
+group 'com.cy'
+version '1.0.0-SNAPSHOT'
+
+apply from: "$rootDir/dependencies.gradle"
+
+subprojects {
+  apply plugin: 'java'
+
+  sourceCompatibility = 1.8
+  targetCompatibility = 1.8
+
+  repositories {
+    mavenLocal()
+    mavenCentral()
+  }
+
+  dependencies {
+    compile libs.common
+    testCompile libs.test
+  }
+  [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+}
