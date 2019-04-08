@@ -1,3 +1,4 @@
 dependencies {
   compile libs.swagger
+  compileOnly libs.lombok
 }

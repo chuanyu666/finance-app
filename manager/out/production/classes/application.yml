@@ -10,3 +10,6 @@ spring:
 server:
   context-path: /manager
   port: 8081
+swagger:
+  groupName: manager
+  basePackage: com.cy.finance.manager.controller

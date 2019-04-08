@@ -3,6 +3,8 @@ package com.cy.finance.manager.controller;
 import com.cy.finance.entity.Product;
 import com.cy.finance.entity.enums.ProductStatus;
 import com.cy.finance.manager.service.ProductService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,6 +19,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Api(value = "products", description = "products")
 @RestController
 @RequestMapping("/products")
 public class ProductController {
@@ -26,6 +29,7 @@ public class ProductController {
   @Autowired
   private ProductService service;
 
+  @ApiOperation(value = "create product")
   @RequestMapping(method = RequestMethod.POST)
   public Product addProduct(@RequestBody Product product) {
     return service.addProduct(product);
