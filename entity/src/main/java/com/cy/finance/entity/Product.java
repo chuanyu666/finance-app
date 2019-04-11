@@ -4,6 +4,8 @@ import com.cy.finance.entity.enums.ProductStatus;
 import lombok.Data;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -14,6 +16,7 @@ public class Product {
   @Id
   private String id;
   private String name;
+  @Enumerated(EnumType.STRING)
   private ProductStatus status;
   /**
    * 起投金额

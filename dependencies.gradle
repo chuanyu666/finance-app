@@ -19,6 +19,9 @@ ext {
     lombok: [
       "org.projectlombok:lombok:1.18.6"
     ],
+    jsonrpc:[
+      "com.github.briandilley.jsonrpc4j:jsonrpc4j:1.5.1"
+    ],
     test  : [
       "org.springframework.boot:spring-boot-starter-test:${versions.springBootVersion}"
     ]
