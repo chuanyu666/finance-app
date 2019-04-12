@@ -29,6 +29,9 @@ ext {
     activemq:[
       "org.springframework.boot:spring-boot-starter-activemq:${versions.springBootVersion}",
     ],
+    rsa:[
+      'commons-codec:commons-codec:1.8'
+    ],
     test  : [
       "org.springframework.boot:spring-boot-starter-test:${versions.springBootVersion}"
     ]

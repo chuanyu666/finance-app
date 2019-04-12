@@ -13,3 +13,11 @@ spring:
 #      broker-url: tcp://10.5.16.14:61616
 #      packages:
 #        trust-all: true
+  jackson:
+    date-format: yyyy-MM-dd'T'HH:mm:ss.SSS'Z'
+  datasource:
+    url: jdbc:mysql://localhost:3306/finance-seller?useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 123456a
+  jpa:
+    show-sql: true
