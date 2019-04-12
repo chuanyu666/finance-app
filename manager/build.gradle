@@ -5,4 +5,5 @@ dependencies {
   compile project(":api")
   compileOnly 'org.projectlombok:lombok:1.18.6'
   compile libs.mysql
+  compile libs.activemq
 }

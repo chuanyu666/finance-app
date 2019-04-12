@@ -6,3 +6,10 @@ rpc:
   client:
     url: http://localhost:8081/manager/
     basePackage: com.cy.finance.api
+spring:
+  cache:
+    type: hazelcast
+#  activemq:
+#      broker-url: tcp://10.5.16.14:61616
+#      packages:
+#        trust-all: true

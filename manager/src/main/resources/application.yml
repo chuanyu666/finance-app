@@ -7,6 +7,10 @@ spring:
     password: 123456a
   jpa:
     show-sql: true
+#  activemq:
+#    broker-url: tcp://10.5.16.14:61616
+  jms:
+    pub-sub-domain: true
 server:
   context-path: /manager
   port: 8081

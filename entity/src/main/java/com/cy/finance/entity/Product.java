@@ -7,12 +7,13 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Id;
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
 @Data
 @Entity
-public class Product {
+public class Product implements Serializable {
   @Id
   private String id;
   private String name;
