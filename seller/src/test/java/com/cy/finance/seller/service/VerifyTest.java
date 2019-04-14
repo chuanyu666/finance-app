@@ -1,5 +1,7 @@
 package com.cy.finance.seller.service;
 
+import com.cy.finance.seller.repository.OrderRepository;
+import com.cy.finance.seller.repositorybackup.BackupOrderRepository;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,16 +24,12 @@ public class VerifyTest {
   @Autowired
   private VerificationOrderService verificationOrderService;
 
-//  @Autowired
-//  private OrderRepository orderRepository;
+  @Autowired
+  private OrderRepository orderRepository;
 
-  //    @Autowired
-//    @Qualifier("readorderRepository")
-//    private OrderRepository readOrderRepository;
-//
-//    @Autowired
-//    @Qualifier("backupOrderRepository")
-//    private OrderRepository backOrderRepository;
+  @Autowired
+  private BackupOrderRepository backupOrderRepository;
+
   @Test
   public void makeVerificationTest() {
     Date day = new GregorianCalendar(2019, 3, 11).getTime();
@@ -48,9 +46,10 @@ public class VerifyTest {
     Date day = new GregorianCalendar(2019,3,11).getTime();
     System.out.println(String.join(";", verificationOrderService.verifyOrder("123", day)));
   }
-//    @Test
-//    public void queryOrder(){
-//        System.out.println(orderRepository.findAll());
-//        System.out.println(readOrderRepository.findAll());
-//    }
+
+  @Test
+  public void queryOrder(){
+    System.out.println(orderRepository.findAll());
+    System.out.println(backupOrderRepository.findAll());
+  }
 }

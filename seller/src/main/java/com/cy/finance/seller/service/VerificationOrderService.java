@@ -3,7 +3,7 @@ package com.cy.finance.seller.service;
 import com.cy.finance.entity.VerificationOrder;
 import com.cy.finance.entity.enums.OrderType;
 import com.cy.finance.seller.enums.ChannelEnum;
-import com.cy.finance.seller.repository.VerificationOrderRepository;
+import com.cy.finance.seller.repositorybackup.VerificationOrderRepository;
 import org.aspectj.util.FileUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

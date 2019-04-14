@@ -1,4 +1,4 @@
-package com.cy.finance.seller.repository;
+package com.cy.finance.seller.repositorybackup;
 
 import com.cy.finance.entity.VerificationOrder;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -20,10 +20,10 @@ public interface VerificationOrderRepository extends JpaRepository<VerificationO
   List<String> queryVerificationOrders(String channelId, Date start, Date end);
 
   @Query(value = "SELECT t.`order_id` FROM order_t t LEFT JOIN verification_order v ON t.`channel_id` = ?1 AND t.`outer_order_id` = v.`order_id` WHERE v.`order_id` IS NULL AND t.create_at >= ?2 AND t.create_at < ?3",nativeQuery = true)
-  List<String> queryExcessOrders(String channelId, Date start,Date end);
+  List<String> queryExcessOrders(String channelId, Date start, Date end);
 
   @Query(value = "SELECT v.`order_id` FROM verification_order v LEFT JOIN order_t t ON t.`channel_id` = ?1 AND v.`outer_order_id` = t.`order_id` WHERE t.`order_id` IS NULL AND v.create_at >= ?2 AND v.create_at < ?3",nativeQuery = true)
-  List<String> queryMissOrders(String channelId, Date start,Date end);
+  List<String> queryMissOrders(String channelId, Date start, Date end);
 
   @Query(value = "SELECT t.order_id FROM order_t t JOIN verification_order v ON t.`channel_id` = ?1 AND t.`outer_order_id` = v.`order_id` WHERE CONCAT_WS('|',t.channel_id,t.channel_user_id,t.product_id,t.order_type,t.amount,DATE_FORMAT( t.create_at,'%Y-%m-%d %H:%i:%s')) != CONCAT_WS('|',v.channel_id,v.channel_user_id,v.product_id,v.order_type,v.amount,DATE_FORMAT( v.create_at,'%Y-%m-%d %H:%i:%s')) AND t.create_at >= ?2 AND t.create_at < ?3",nativeQuery = true)
   List<String> queryDifferentOrders(String channelId, Date start, Date end);
