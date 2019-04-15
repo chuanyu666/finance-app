@@ -55,7 +55,7 @@ public class ProductService {
 
   public Product findProduct(String id) {
     Assert.notNull(id, ErrorEnum.ID_NOT_NULL.getCode());
-    return repository.findOne(id);
+    return repository.findById(id).orElse(null);
   }
 
   public Product addProduct(Product product) {

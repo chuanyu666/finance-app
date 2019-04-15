@@ -112,7 +112,7 @@ public class VerificationOrderService {
     for (String line : lines) {
       orders.add(parseLineAndGenerateVerificationOrder(line));
     }
-    verificationOrderRepository.save(orders);
+    verificationOrderRepository.saveAll(orders);
   }
 
   public List<String> verifyOrder(String channelId,Date day){

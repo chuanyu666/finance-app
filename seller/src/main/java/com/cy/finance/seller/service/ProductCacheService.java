@@ -51,9 +51,10 @@ public class ProductCacheService {
 
   public List<Product> readAllProductFromCache() {
     Map map = hazelcastInstance.getMap(CACHE_NAME);
-    List<Product> products = null;
+    List<Product> products;
     if (!map.isEmpty()) {
-      products = (List<Product>) map.values();
+      products = new ArrayList<>();
+      products.addAll(map.values());
     } else {
       products = findAllProduct();
     }

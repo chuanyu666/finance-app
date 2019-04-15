@@ -1,6 +1,6 @@
 ext {
   versions = [
-    springBootVersion: '1.5.4.RELEASE'
+    springBootVersion: '2.0.0.RELEASE'
   ]
   libs = [
     common: [

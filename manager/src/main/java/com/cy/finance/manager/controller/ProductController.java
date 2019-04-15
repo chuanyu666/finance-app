@@ -51,7 +51,7 @@ public class ProductController {
     if (StringUtils.isNoneBlank(statuses)) {
       statusList = Arrays.stream(statuses.split(",")).map(ProductStatus::valueOf).collect(Collectors.toList());
     }
-    Pageable pageable = new PageRequest(pageNum, pageSize);
+    Pageable pageable = PageRequest.of(pageNum, pageSize);
     return service.listProducts(idList, minRewardRate, maxRewardRate, statusList, pageable);
   }
 }
