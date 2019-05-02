@@ -26,7 +26,7 @@ public class ProductRpcImpl implements ProductRpc {
 
   @Override
   public List<Product> findProductList(ProductRpcRequest request) {
-    Pageable pageable = new PageRequest(request.getPage(), request.getPageSize(), request.getSort(), request.getOrderBy());
+    Pageable pageable = PageRequest.of(request.getPage(), request.getPageSize(), request.getSort(), request.getOrderBy());
     return productService.listProducts(request.getIds(), request.getMinRewardRate(),
       request.getMaxRewardRate(), request.getStatuses(), pageable).getContent();
   }
